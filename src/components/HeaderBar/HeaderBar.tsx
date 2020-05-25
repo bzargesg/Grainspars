@@ -10,13 +10,15 @@ export const Headerbar = () => {
     return (
         <AppBar position="static">
             <Toolbar>
-                <IconButton edge="start" className="menuButton" color="inherit" aria-label="menu">
-                    <MenuIcon />
-                </IconButton>
+                {/* <IconButton edge="start" className="menuButton" color="inherit" aria-label="menu"> */}
+                {/* <MenuIcon /> */}
+                {/* </IconButton> */}
                 <Typography variant="h6" className="menuTitle">
-                    News
+                    Navigation
                 </Typography>
-                <Button color="inherit">Login</Button>
+                <Button color="inherit">Stuff</Button>
+                <Button color="inherit">otherStuff</Button>
+                <Button color="inherit">EvenMoreStuff</Button>
             </Toolbar>
         </AppBar>
     );

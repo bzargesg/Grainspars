@@ -16,9 +16,13 @@ export const Headerbar = () => {
                 <Typography variant="h6" className="menuTitle">
                     Navigation
                 </Typography>
-                <Button color="inherit">Stuff</Button>
-                <Button color="inherit">otherStuff</Button>
-                <Button color="inherit">EvenMoreStuff</Button>
+                <Button color="inherit">Home</Button>
+                <Button color="inherit">About Us</Button>
+                <Button color="inherit">Teams</Button>
+                <Button color="inherit">Streams</Button>
+                <Button color="inherit">Forums</Button>
+                <Button color="inherit">Apply</Button>
+                <Button color="inherit">Logs</Button>
             </Toolbar>
         </AppBar>
     );

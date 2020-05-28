@@ -10,7 +10,7 @@ const App = () => {
         <RecoilRoot>
             <div>
                 <Headerbar />
-                <RecentAchievementCard />
+                {/* <RecentAchievementCard /> */}
                 <HelloWorld />
             </div>
         </RecoilRoot>

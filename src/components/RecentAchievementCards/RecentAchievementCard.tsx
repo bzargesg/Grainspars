@@ -8,6 +8,7 @@ import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {Typography} from "@material-ui/core";
 import CardContent from "@material-ui/core/CardContent";
+import {achievement} from "./Types/achievement";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -32,14 +33,14 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export const RecentAchievementCard = () => {
+export const RecentAchievementCard = (props: achievement) => {
     const classes = useStyles();
     return (
-        <Card className="achievement card">
+        <Card className={classes.root}>
             <CardHeader
                 avatar={
-                    <Avatar aria-label="achievement" className="achievement cardHeader">
-                        I
+                    <Avatar aria-label="achievement" className={classes.avatar}>
+                        {props.avatar}
                     </Avatar>
                 }
                 action={
@@ -47,17 +48,13 @@ export const RecentAchievementCard = () => {
                         <MoreVertIcon />
                     </IconButton>
                 }
-                title="Execute Order 66!"
-                subheader="Team Empire - 12/12M US 198"
+                title={props.header}
+                subheader={props.subheader}
             />
-            <CardMedia
-                className={classes.media}
-                title="M Nzoth down"
-                image="https://i2.wp.com/www.eternal-kingdom.com/wp-content/uploads/2020/05/Nzoth-Kill.jpg?w=1431&ssl=1"
-            />
+            <CardMedia className={classes.media} title={props.title} image={props.imageUrl} />
             <CardContent>
                 <Typography variant="body2" color="textSecondary" component="p">
-                    We did it!
+                    {props.message}
                 </Typography>
             </CardContent>
         </Card>

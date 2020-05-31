@@ -5,8 +5,22 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import MenuIcon from "@material-ui/icons/Menu";
+import {createStyles, makeStyles, Theme} from "@material-ui/core";
 
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        root: {
+            "& > *": {
+                margin: theme.spacing(1)
+            }
+        },
+        headerButton: {
+            color: "white"
+        }
+    })
+);
 export const Headerbar = () => {
+    const classes = useStyles();
     return (
         <AppBar position="static">
             <Toolbar>
@@ -16,13 +30,27 @@ export const Headerbar = () => {
                 <Typography variant="h6" className="menuTitle">
                     Navigation
                 </Typography>
-                <Button color="inherit">Home</Button>
-                <Button color="inherit">About Us</Button>
-                <Button color="inherit">Teams</Button>
-                <Button color="inherit">Streams</Button>
-                <Button color="inherit">Forums</Button>
-                <Button color="inherit">Apply</Button>
-                <Button color="inherit">Logs</Button>
+                <Button className={classes.headerButton} variant="text">
+                    Home
+                </Button>
+                <Button className={classes.headerButton} color="inherit">
+                    About Us
+                </Button>
+                <Button className={classes.headerButton} color="inherit">
+                    Teams
+                </Button>
+                <Button className={classes.headerButton} color="inherit">
+                    Streams
+                </Button>
+                <Button className={classes.headerButton} color="inherit">
+                    Forums
+                </Button>
+                <Button className={classes.headerButton} color="inherit">
+                    Apply
+                </Button>
+                <Button className={classes.headerButton} color="inherit">
+                    Logs
+                </Button>
             </Toolbar>
         </AppBar>
     );

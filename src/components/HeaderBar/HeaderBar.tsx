@@ -1,11 +1,10 @@
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import MenuIcon from "@material-ui/icons/Menu";
 import {createStyles, makeStyles, Theme} from "@material-ui/core";
+import {HeaderBarButton} from "../HeaderBarButton/HeaderBarButton";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -24,33 +23,16 @@ export const Headerbar = () => {
     return (
         <AppBar position="static">
             <Toolbar>
-                {/* <IconButton edge="start" className="menuButton" color="inherit" aria-label="menu"> */}
-                {/* <MenuIcon /> */}
-                {/* </IconButton> */}
                 <Typography variant="h6" className="menuTitle">
                     Navigation
                 </Typography>
-                <Button className={classes.headerButton} variant="text">
-                    Home
-                </Button>
-                <Button className={classes.headerButton} color="inherit">
-                    About Us
-                </Button>
-                <Button className={classes.headerButton} color="inherit">
-                    Teams
-                </Button>
-                <Button className={classes.headerButton} color="inherit">
-                    Streams
-                </Button>
-                <Button className={classes.headerButton} color="inherit">
-                    Forums
-                </Button>
-                <Button className={classes.headerButton} color="inherit">
-                    Apply
-                </Button>
-                <Button className={classes.headerButton} color="inherit">
-                    Logs
-                </Button>
+                <HeaderBarButton text="Home" route="/" />
+                <HeaderBarButton text="About Us" route="/about" />
+                <HeaderBarButton text="Teams" route="/teams" />
+                <HeaderBarButton text="Streams" route="/streams" />
+                <HeaderBarButton text="Forums" route="/forums" />
+                <HeaderBarButton text="Apply" route="/apply" />
+                <HeaderBarButton text="Logs" route="/logs" />
             </Toolbar>
         </AppBar>
     );

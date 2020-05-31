@@ -3,10 +3,11 @@ import {achievement} from "./Types/achievement";
 import {RecentAchievementCard} from "./RecentAchievementCard";
 import React from "react";
 
-export const RecentAchievementCardContainer = (props: achievement[]) => {
+export const RecentAchievementCardContainer = ({achievements}: {achievements: achievement[]}) => {
+    // console.log(props);
     return (
         <div>
-            {props.map((achievement: achievement) => (
+            {achievements.map((achievement: achievement) => (
                 <RecentAchievementCard {...achievement} />
             ))}
         </div>

@@ -15,7 +15,9 @@ import clsx from "clsx";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        maxWidth: 345
+        maxWidth: 345,
+        padding: "20px",
+        margin: "20px"
     },
     media: {
         height: 0,
@@ -49,11 +51,6 @@ export const RecentAchievementCard = (props: achievement) => {
                     <Avatar aria-label="achievement" className={classes.avatar}>
                         {props.avatar}
                     </Avatar>
-                }
-                action={
-                    <IconButton aria-label="settings">
-                        <MoreVertIcon />
-                    </IconButton>
                 }
                 title={props.header}
                 subheader={props.subheader}

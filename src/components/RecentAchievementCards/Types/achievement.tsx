@@ -4,5 +4,5 @@ export interface achievement {
     message: string;
     header: string;
     subheader: string;
-    title: string;
+    info: string;
 }

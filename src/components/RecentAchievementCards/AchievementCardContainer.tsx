@@ -2,6 +2,7 @@
 import {achievement} from "./Types/achievement";
 import {RecentAchievementCard} from "./RecentAchievementCard";
 import React from "react";
+import {makeStyles} from "@material-ui/core/styles";
 
 const achievements = [
     {
@@ -23,10 +24,23 @@ const achievements = [
         info: "string"
     }
 ];
+const contentStyle = `{
+    float: "right"
+}`;
+
+const useStyles = makeStyles((theme) => ({
+    content: {
+        display: "grid",
+        "grid-template-columns": "33% 33% 33%",
+        float: "right",
+        width: "80%"
+    }
+}));
 
 export const RecentAchievementCardContainer = () => {
+    const classes = useStyles();
     return (
-        <div>
+        <div className={classes.content}>
             {achievements.map((achievement: achievement) => (
                 <RecentAchievementCard {...achievement} />
             ))}

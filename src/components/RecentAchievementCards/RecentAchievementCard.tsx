@@ -36,10 +36,11 @@ export const device = {
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: 100,
-        [`@media ${device.mobileL}`]: {
-            width: 500
-        },
+        // width: 100,
+        // [`@media ${device.mobileL}`]: {
+        //     width: 500
+        // },
+        width: "80%",
         padding: "20px",
         margin: "20px"
     },
@@ -61,7 +62,6 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "red[500]"
     }
 }));
-const cardStyles = {};
 
 export const RecentAchievementCard = (props: achievement) => {
     const classes = useStyles();

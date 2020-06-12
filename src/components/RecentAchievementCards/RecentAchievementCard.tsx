@@ -12,10 +12,34 @@ import {achievement} from "./Types/achievement";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import CardActions from "@material-ui/core/CardActions";
 import clsx from "clsx";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+
+const size = {
+    mobileS: "320px",
+    mobileM: "375px",
+    mobileL: "425px",
+    tablet: "768px",
+    laptop: "1024px",
+    laptopL: "1440px",
+    desktop: "2560px"
+};
+export const device = {
+    mobileS: `(min-width: ${size.mobileS})`,
+    mobileM: `(min-width: ${size.mobileM})`,
+    mobileL: `(min-width: ${size.mobileL})`,
+    tablet: `(min-width: ${size.tablet})`,
+    laptop: `(min-width: ${size.laptop})`,
+    laptopL: `(min-width: ${size.laptopL})`,
+    desktop: `(min-width: ${size.desktop})`,
+    desktopL: `(min-width: ${size.desktop})`
+};
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        maxWidth: 345,
+        width: 100,
+        [`@media ${device.mobileL}`]: {
+            width: 500
+        },
         padding: "20px",
         margin: "20px"
     },
@@ -37,6 +61,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "red[500]"
     }
 }));
+const cardStyles = {};
 
 export const RecentAchievementCard = (props: achievement) => {
     const classes = useStyles();

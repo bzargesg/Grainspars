@@ -20,9 +20,16 @@ const useStyles = makeStyles((theme) => ({
         // [`@media ${device.mobileL}`]: {
         //     width: "60%"
         // },
+        "background-color": "rgba(0, 0, 0, .8)",
+        color: "white",
         width: "80%",
-        padding: "20px",
-        margin: "20px"
+        padding: "25px",
+        margin: "20px",
+        "border-top": "2px solid #2482e3",
+        display: "block",
+        "overflow-wrap": "break-word",
+        wordWrap: "break-word",
+        wordBreak: "break-word"
     },
     media: {
         height: 0,
@@ -39,7 +46,8 @@ const useStyles = makeStyles((theme) => ({
         transform: "rotate(180deg)"
     },
     avatar: {
-        backgroundColor: "red[500]"
+        color: "white"
+        // backgroundColor: "red[500]"
     }
 }));
 
@@ -57,12 +65,14 @@ export const RecentAchievementCard = (props: achievement) => {
                         {props.avatar}
                     </Avatar>
                 }
+                className={classes.avatar}
+                color="white"
                 title={props.header}
                 subheader={props.subheader}
             />
             <CardMedia className={classes.media} title={props.header} image={props.imageUrl} />
             <CardContent>
-                <Typography variant="body2" color="textSecondary" component="p">
+                <Typography variant="body2" color="white" component="p">
                     {props.message}
                 </Typography>
             </CardContent>

@@ -51,8 +51,8 @@ const useStyles = makeStyles((theme) => ({
     content: {
         display: "grid",
         "grid-template-columns": "33% 33% 33%",
-        [`@media ${device.mobileL}`]: {
-            "grid-template-columns": "33% 33%"
+        [`@media ${device.tablet}`]: {
+            "grid-template-columns": "66%"
         },
         float: "right",
         width: "80%"

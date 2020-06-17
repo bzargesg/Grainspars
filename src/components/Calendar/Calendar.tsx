@@ -31,19 +31,41 @@ export const Calendar = (props) => {
             </td>
         );
     }
+    var totalMonthDays = [...blanks, ...daysInMonthArr];
+    let rows = [];
+    let cells = [];
+    totalMonthDays.map((row, i) => {
+        if (i % 7 !== 0) {
+            cells.push(row);
+        } else {
+            rows.push(cells);
+            cells = [];
+            cells.push(row);
+        }
+        if (i === totalMonthDays.length - 1) {
+            rows.push(cells);
+        }
+    });
+    var daysinmonth = rows.map((d, i) => {
+        return <tr>{d}</tr>;
+    });
 
     return (
-        <div>
-            Calendar
-            {weekdayshort.map((day) => {
-                return (
-                    <th key={day} className="week-day">
-                        {day}
-                    </th>
-                );
-            })}
-            {blanks.map((blank) => blank)}
-            {daysInMonthArr.map((daysInMonth) => daysInMonth)}
-        </div>
+        <table className="calendar-day">
+            <thead>
+                {weekdayshort.map((day) => {
+                    return (
+                        <th key={day} className="week-day">
+                            {day}
+                        </th>
+                    );
+                })}
+            </thead>
+            <tbody>
+                {rows.map((d) => (
+                    <tr>{d}</tr>
+                ))}
+            </tbody>
+        </table>
     );
 };
